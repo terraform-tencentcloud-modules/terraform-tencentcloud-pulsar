@@ -7,3 +7,6 @@
 *.tfstate
 *.tfstate.backup
 *.lock.hcl
+
+test
+
