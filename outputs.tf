@@ -9,7 +9,7 @@ output "namespace_id" {
 }
 
 output "namespace_role_id" {
-  description = "ID of the resource."
+  description = "The id of role authorization."
   value       = tencentcloud_tdmq_namespace_role_attachment.this[0].id
 }
 
