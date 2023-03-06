@@ -2,14 +2,14 @@
 
 ## terraform-tencentcloud-mysql
 
-A terraform module used to create TencentCloud pulsar instance, namespace, role, topic and authorization role permissions.
+A terraform module used to create TencentCloud pulsar instance, namespace, topic, role and authorization role permissions.
 
 The following resources are included.
 
 * [Pulsar Instance](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/tdmq_instance.html)
 * [Pulsar Namespace](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/tdmq_namespace.html)
-* [Pulsar Role](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/tdmq_role.html)
 * [Pulsar Topic](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/tdmq_topic.html)
+* [Pulsar Role](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/tdmq_role.html)
 * [Pulsar Namespace Role Attachment](https://registry.terraform.io/providers/tencentcloudstack/tencentcloud/latest/docs/resources/tdmq_namespace_role_attachment.html)
 
 ## Usage
@@ -59,12 +59,12 @@ module "pulsar" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| cluster_name | The name of tdmq cluster to be created. | string | "" | yes |
 | create_pulsar_instance | Whether to create pulsar instance. | bool | true | no |
 | create_pulsar_namespace | Whether to create pulsar namespace. | bool | true | no |
+| create_pulsar_topic | Whether to create pulsar topic. | bool | true | no |
 | create_pulsar_role | Whether to create pulsar role. | bool | true | no |
 | create_pulsar_namespace_role | Whether to create pulsar namespace role. | bool | true | no |
-| create_pulsar_topic | Whether to create pulsar topic. | bool | true | no |
+| cluster_name | The name of tdmq cluster to be created. | string | "" | yes |
 | bind_cluster_id | The Dedicated Cluster Id. | number | "" | no |
 | instance_remark | Description of the tdmq cluster. | string | "" | no |
 | tags | Tag description list of the cluster. | map(string) | {} | no |
@@ -86,9 +86,9 @@ module "pulsar" {
 |------|-------------|
 | cluster_id | The cluster id of pulsar. | 
 | namespace_id | The namespace id of pulsar. |
-| namespace_role_id | ID of the resource. |
-| role_id | The role id of pulsar. |
 | topic_id | The topic id of pulsar. |
+| role_id | The role id of pulsar. |
+| namespace_role_id | The id of role authorization. |
 | create_time | Creation time of resource. |
 
 

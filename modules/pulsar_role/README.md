@@ -28,7 +28,7 @@ module "pulsar_role" {
 | Name | Description |
 |------|-------------|
 | role_id | The role id of pulsar. |
-| namespace_role_id | ID of the resource. |
+| namespace_role_id | The id of role authorization. |
 | create_time | Creation time of resource. |
 
 
