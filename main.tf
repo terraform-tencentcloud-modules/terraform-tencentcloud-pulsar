@@ -11,7 +11,7 @@ resource "tencentcloud_tdmq_instance" "this" {
 }
 
 resource "tencentcloud_tdmq_namespace" "this" {
-  count = var.create_pulsar_namespace ? 1 : 0
+  count = var.create_pulsar_instance && var.create_pulsar_namespace ? 1 : 0
 
   cluster_id       = local.cluster_id
   environ_name     = var.environ_name
@@ -21,7 +21,7 @@ resource "tencentcloud_tdmq_namespace" "this" {
 }
 
 resource "tencentcloud_tdmq_role" "this" {
-  count = var.create_pulsar_role ? 1 : 0
+  count = var.create_pulsar_instance && var.create_pulsar_role ? 1 : 0
 
   cluster_id = local.cluster_id
   remark     = var.role_remark
@@ -29,7 +29,7 @@ resource "tencentcloud_tdmq_role" "this" {
 }
 
 resource "tencentcloud_tdmq_namespace_role_attachment" "this" {
-  count = var.create_pulsar_namespace_role ? 1 : 0
+  count = var.create_pulsar_instance && var.create_pulsar_namespace && var.create_pulsar_namespace_role ? 1 : 0
 
   cluster_id  = local.cluster_id
   environ_id  = tencentcloud_tdmq_namespace.this[0].id
@@ -38,7 +38,7 @@ resource "tencentcloud_tdmq_namespace_role_attachment" "this" {
 }
 
 resource "tencentcloud_tdmq_topic" "this" {
-  count = var.create_pulsar_topic ? 1 : 0
+  count = var.create_pulsar_instance && var.create_pulsar_namespace && var.create_pulsar_topic ? 1 : 0
 
   cluster_id = local.cluster_id
   environ_id = tencentcloud_tdmq_namespace.this[0].id
