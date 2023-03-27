@@ -1,6 +1,6 @@
 # TencentCloud Pulsar Module for Terraform
 
-## terraform-tencentcloud-mysql
+## terraform-tencentcloud-pulsar
 
 A terraform module used to create TencentCloud pulsar instance, namespace, topic, role and authorization role permissions.
 
